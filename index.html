@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Mural de Avisos</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        margin-top: 10vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+        background-color: rgb(247, 247, 247);
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .mural {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .aviso {
+        background: #6e6e6e;
+        padding: 15px;
+        border-radius: 8px;
+        width: 80vw;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        cursor: pointer;
+    }
+
+    .aviso:hover {
+        transform: rotate(0deg) scale(1.02);
+        transform: rotate(-1deg);
+    }
+
+    .aviso h2 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+
+    .aviso p {
+        color: #ffffff;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+
+    <h1>📌 Casa Concreto</h1>
+
+    <div class="mural">
+
+        <div class="aviso"
+            onclick="window.open('https://docs.google.com/presentation/d/13XzEOHEpnrIrzMx72LJdWjlXgFlwRPqltVGscNBgQSo/edit?slide=id.p1#slide=id.p1', '_blank')">
+            <h2>Apresentação Casa Concreto</h2>
+            <p>Apresentação em PPT do Plano de Negócios</p>
+        </div>
+
+
+        <div class="aviso" onclick="window.location.href='Plano de Negocios.html'">
+            <h2>Business Plan</h2>
+            <p>Plano de Negócios disponível</p>
+        </div>
+
+        <div class="aviso" onclick="window.location.href='Cotar Viabilidade.html'">
+            <h2>Cotar Viabilidade</h2>
+            <p>Calculadora de Viabilidade</p>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+<script>
+    if (localStorage.getItem("logon") !== "1") {
+        alert("Acesso não autorizado! Você será redirecionado para a tela de login.");
+        window.location.href = "index.html";
+    }
+</script>
+
+</html>
