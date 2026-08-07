@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
     // ------------------ PIZZA ------------------
     function inicializarGraficoPizza() {
         myChart.setOption({
-            color: ['#06d6a0', '#ef233c'],
+            color: ['#0061C8', '#e76b05'],
             tooltip: { show: false },
             series: [{
                 type: 'pie',
@@ -80,8 +80,13 @@ window.addEventListener('load', () => {
             agrupado[item.centro_custo] += item.total_devido;
         });
 
-        const labels = Object.keys(agrupado);
-        const valores = Object.values(agrupado);
+
+        const ordenado = Object.entries(agrupado)
+            .map(([centro, valor]) => ({ centro, valor }))
+            .sort((b, a) => b.valor - a.valor);
+
+        const labels = ordenado.map(i => i.centro);
+        const valores = ordenado.map(i => i.valor);
 
         myBarChartEntradas.setOption({
             tooltip: { show: false },
@@ -113,8 +118,12 @@ window.addEventListener('load', () => {
             agrupado[item.centro_custo] += item.total_pago;
         });
 
-        const labels = Object.keys(agrupado);
-        const valores = Object.values(agrupado);
+        const ordenado = Object.entries(agrupado)
+            .map(([centro, valor]) => ({ centro, valor }))
+            .sort((b, a) => b.valor - a.valor);
+
+        const labels = ordenado.map(i => i.centro);
+        const valores = ordenado.map(i => i.valor);
 
         myBarChartSaidas.setOption({
             tooltip: { show: false },
@@ -124,12 +133,12 @@ window.addEventListener('load', () => {
             series: [{
                 type: 'bar',
                 data: valores,
-                itemStyle: { color: '#ef233c' },
+                itemStyle: { color: '#e76b05' },
                 label: {
                     show: true,
                     position: 'right',
                     formatter: p => p.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                    color: "#fff"
+                    color: "#050404"
                 }
             }]
         });
