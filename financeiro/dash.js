@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
     // ------------------ PIZZA ------------------
     function inicializarGraficoPizza() {
         myChart.setOption({
-            color: ['#41D424', '#F80800'],
+            color: ['#2FCF8A', '#F80800'],
             tooltip: { show: false },
             series: [{
                 type: 'pie',
@@ -96,7 +96,6 @@ window.addEventListener('load', () => {
             series: [{
                 type: 'bar',
                 data: valores,
-                // itemStyle: { color: '#41D424' },
                 itemStyle: { color: '#F80800' },
                 label: {
                     show: true,
@@ -134,7 +133,7 @@ window.addEventListener('load', () => {
             series: [{
                 type: 'bar',
                 data: valores,
-                itemStyle: { color: '#41D424' },
+                itemStyle: { color: '#2FCF8A' },
                 label: {
                     show: true,
                     position: 'right',
