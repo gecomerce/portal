@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
     // ------------------ PIZZA ------------------
     function inicializarGraficoPizza() {
         myChart.setOption({
-            color: ['#0061C8', '#e76b05'],
+            color: ['#41D424', '#F80800'],
             tooltip: { show: false },
             series: [{
                 type: 'pie',
@@ -90,13 +90,14 @@ window.addEventListener('load', () => {
 
         myBarChartEntradas.setOption({
             tooltip: { show: false },
-            grid: { left: '10%', right: '10%', top: '5%', bottom: '8%' },
+            grid: { left: '10%', right: '20%', top: '5%', bottom: '8%' },
             xAxis: { show: false },
             yAxis: { type: 'category', data: labels, axisLabel: { color: getCorRotulo() } },
             series: [{
                 type: 'bar',
                 data: valores,
-                itemStyle: { color: '#0061C8' },
+                // itemStyle: { color: '#41D424' },
+                itemStyle: { color: '#F80800' },
                 label: {
                     show: true,
                     position: 'right',
@@ -133,7 +134,7 @@ window.addEventListener('load', () => {
             series: [{
                 type: 'bar',
                 data: valores,
-                itemStyle: { color: '#e76b05' },
+                itemStyle: { color: '#41D424' },
                 label: {
                     show: true,
                     position: 'right',
@@ -165,6 +166,7 @@ window.addEventListener('load', () => {
                 <tr>
                     <th>Centro de Custo</th>
                     <th>Descrição</th>
+                    <th>Entrada</th>
                     <th>Parcelas Pagas</th>
                     <th>Parcelas Devidas</th>
                     <th>Valor Parcela</th>
@@ -180,6 +182,7 @@ window.addEventListener('load', () => {
             <tr>
                 <td>${item.centro_custo}</td>
                 <td>${item.descricao}</td>
+                <td>${item.valor_entrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                 <td>${item.parcelas_pagas}</td>
                 <td>${item.parcelas_devidas}</td>
                 <td>${item.valor_parcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
@@ -267,6 +270,7 @@ window.addEventListener('load', () => {
                 return {
                     centro_custo: row['centro de custo'],
                     descricao: row['descrição'],
+                    valor_entrada: parseReal(row['valor entrada']),
                     parcelas_pagas: parseInt(row['n parcelas pagas']) || 0,
                     parcelas_devidas: parseInt(row['n parcelas devidas']) || 0,
                     valor_parcela: parseReal(row['valor parcela']),
