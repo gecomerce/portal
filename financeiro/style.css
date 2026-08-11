@@ -278,6 +278,11 @@ screen and (orientation: portrait) {
     #tabela-movimentacoes {
         height: auto;
         line-height: 5vw;
+
+    }
+
+    .card-tabela{
+        margin-bottom: 5vw;
     }
 
 
