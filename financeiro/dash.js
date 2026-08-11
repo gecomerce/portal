@@ -80,7 +80,6 @@ window.addEventListener('load', () => {
             agrupado[item.centro_custo] += item.total_devido;
         });
 
-
         const ordenado = Object.entries(agrupado)
             .map(([centro, valor]) => ({ centro, valor }))
             .sort((b, a) => b.valor - a.valor);
@@ -106,7 +105,6 @@ window.addEventListener('load', () => {
             }]
         });
     }
-
 
     // ------------------ BARRAS TOTAL PAGO ------------------
 
@@ -143,7 +141,6 @@ window.addEventListener('load', () => {
             }]
         });
     }
-    ;
 
     // ------------------ TABELA ------------------
     function filtrarDados() {
@@ -235,7 +232,6 @@ window.addEventListener('load', () => {
         });
     }
 
-
     // ------------------ ATUALIZAR TUDO ------------------
     function atualizarGraficos() {
         const dados = filtrarDados();
@@ -251,6 +247,7 @@ window.addEventListener('load', () => {
     inicializarGraficoPizza();
 
     // ------------------ FETCH ------------------
+    
     fetch(url)
         .then(response => {
             if (!response.ok) throw new Error("Erro ao carregar planilha");
