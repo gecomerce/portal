@@ -178,9 +178,9 @@ window.addEventListener('load', () => {
             <tr>
                 <td>${item.centro_custo}</td>
                 <td>${item.descricao}</td>
-                <td>${item.valor_entrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
-                <td>${item.parcelas_pagas}</td>
-                <td>${item.parcelas_devidas}</td>
+                <td style="color: #2FCF8A; font-weight: bold;">${item.valor_entrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                <td style="color: #2FCF8A; font-weight: bold;">${item.parcelas_pagas}</td>
+                <td style="color: #F80800; font-weight: bold;">${item.parcelas_devidas}</td>
                 <td>${item.valor_parcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                 <td style="color: #2FCF8A; font-weight: bold;">${item.total_pago.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                 <td style="color: #F80800; font-weight: bold;">${item.total_devido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
